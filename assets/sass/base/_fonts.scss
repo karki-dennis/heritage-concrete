@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'ChevinLight';
+  src: url('assets/fonts/ChevinLight.woff2') format('woff2'),
+  url('assets/fonts/ChevinLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Mathilde';
+  src: url('assets/fonts/Mathilde.eot');
+  src: url('assets/fonts/Mathilde.eot?#iefix') format('embedded-opentype'),
+  url('assets/fonts/Mathilde.woff2') format('woff2'),
+  url('assets/fonts/Mathilde.woff') format('woff'),
+  url('assets/fonts/Mathilde.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

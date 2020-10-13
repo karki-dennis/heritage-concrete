@@ -1,0 +1,21 @@
+.btn{
+  padding: 13px 35px;
+  border-radius: 30px;
+  border:1px solid;
+  @include font-size(14);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  transition: 0.3s ease;
+  &-primary{
+    border-color: $color__sec;
+    color: $color__sec;
+    &:hover{
+      background: $color__sec;
+      color: #fff;
+    }
+  }
+}
