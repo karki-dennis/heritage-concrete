@@ -1,49 +1,11 @@
 .site-header {
-  padding: 15px 0 25px;
-  @media (min-width: 768px) {
-    .container {
-      display: flex;
-      max-width: 100%;
-    }
-  }
-  @media (min-width: 1400px) {
-    .container{
-      max-width: 1380px;
-    }
-  }
-}
-
-a.top-contact {
-  font-size: 24px;
-  padding: 0;
-  margin: 20px 0 0 30px;
-  position: relative;
-  @media (min-width: 768px) {
-    margin: 55px 0 0 30px;
-  }
-  @media (min-width: 992px) {
-    margin: 5px 0 0 30px;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -30px;
-    background: url('assets/images/sprite.png') no-repeat 0 -15px;
-    width: 15px;
-    height: 26px;
-  }
-  &:hover {
-    color: $color__sec;
-  }
-  @media (min-width: 768px) {
-    float: right;
-  }
-}
-
-.site-branding {
-  margin-top: 15px;
-  @media (min-width: 768px) {
-    margin-right: 130px;
+  padding: 40px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  .container--flex{
+    align-items: center;
   }
 }

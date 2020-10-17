@@ -22,7 +22,7 @@
             "key": "field_5f86fc11f28a4",
             "label": "Home Slider",
             "name": "home_slider",
-            "type": "group",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,10 +31,14 @@
                 "class": "",
                 "id": ""
             },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
             "layout": "block",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5f86fc24f28a5",
+                    "key": "field_5f89bc1d8add3",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -58,7 +62,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5f86fc2ef28a6",
+                    "key": "field_5f89bc278add4",
                     "label": "Heading",
                     "name": "heading",
                     "type": "text",
@@ -77,10 +81,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5f86fc33f28a7",
-                    "label": "Sub Heading",
-                    "name": "sub_heading",
-                    "type": "text",
+                    "key": "field_5f89bc328add5",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -91,9 +95,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
         },
@@ -178,7 +182,7 @@
                     "key": "field_5f86fceff28ac",
                     "label": "Sub Heading",
                     "name": "sub_heading",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -189,9 +193,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 },
                 {
                     "key": "field_5f86fd02f28ad",
@@ -352,6 +356,80 @@
                     "multiple": 0
                 }
             ]
+        },
+        {
+            "key": "field_5f8914cabf272",
+            "label": "Resources Block",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f89155cbf273",
+            "label": "Resources",
+            "name": "resources",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5f89167b5e100"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_5f891720ea564",
+            "label": "Products Block",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f891735ea566",
+            "label": "Products",
+            "name": "products",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5f89167b5e100"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -371,5 +449,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602682543
+    "modified": 1602914292
 }

@@ -1,6 +1,6 @@
 <?php
 /*add image sizes*/
-add_image_size( 'blog-small', 330, 120,true );
+add_image_size( 'std-image', 400, 330,true );
 
 /**
  * Created by PhpStorm.

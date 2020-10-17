@@ -7,13 +7,16 @@
 
 .container {
   width: 100%;
-  max-width: 1380px;
+  max-width: 1230px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  &--flex{
+    display: flex;
+  }
 }
-
+/*
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -36,13 +39,8 @@
   .container {
     max-width: 1140px;
   }
-}
+}*/
 
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1380px;
-  }
-}
 .container-fluid {
   width: 100%;
   padding-right: 15px;

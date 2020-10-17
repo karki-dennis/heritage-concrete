@@ -8,44 +8,48 @@
  * @package Heritage_Concrete
  */
 
-if (!defined('_S_VERSION')) {
+if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.0');
+	define( '_S_VERSION', '1.0.0' );
 }
 /**
  * Defines templating related WordPress constants
  *
  * @since 3.0.0
  */
-function wp_templating_constants() {
-	/**
-	 * Filesystem path to the current active template directory
-	 *
-	 * @since 1.5.0
-	 */
+
+/**
+ * Filesystem path to the current active template directory
+ *
+ * @since 1.5.0
+ */
+if ( ! defined( 'TEMPLATEPATH' ) ) {
 	define( 'TEMPLATEPATH', get_template_directory() );
-
-	/**
-	 * Filesystem path to the current active template stylesheet directory
-	 *
-	 * @since 2.1.0
-	 */
-	define( 'STYLESHEETPATH', get_stylesheet_directory() );
-
-	/**
-	 * Slug of the default theme for this installation.
-	 * Used as the default theme when installing new sites.
-	 * It will be used as the fallback if the current theme doesn't exist.
-	 *
-	 * @since 3.0.0
-	 * @see WP_Theme::get_core_default_theme()
-	 */
-	if ( ! defined( 'WP_DEFAULT_THEME' ) ) {
-		define( 'WP_DEFAULT_THEME', 'twentytwenty' );
-	}
-
 }
-if (!function_exists('heritage_concrete_setup')) :
+/**
+ * Filesystem path to the current active template stylesheet directory
+ *
+ * @since 2.1.0
+ */
+if ( ! defined( 'STYLESHEETPATH' ) ) {
+	define( 'STYLESHEETPATH', get_stylesheet_directory() );
+}
+
+//
+/*$functionFiles = scandir( get_stylesheet_directory_uri() . '/inc' );
+foreach ( $functionFiles as $functionFile ) {
+	if ( $functionFile == '.' || $functionFile == '..' ):
+		continue;
+	endif;
+
+	$functionFile = get_stylesheet_directory_uri() . '/inc/' . $functionFile;
+
+	if ( file_exists( $functionFile ) ) {
+		require_once( $functionFile );
+	}
+}*/
+
+if ( ! function_exists( 'heritage_concrete_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -53,18 +57,17 @@ if (!function_exists('heritage_concrete_setup')) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function heritage_concrete_setup()
-	{
+	function heritage_concrete_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Heritage Concrete, use a find and replace
 		 * to change 'heritage-concrete' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain('heritage-concrete', get_template_directory() . '/languages');
+		load_theme_textdomain( 'heritage-concrete', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support('automatic-feed-links');
+		add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -72,19 +75,19 @@ if (!function_exists('heritage_concrete_setup')) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support('title-tag');
+		add_theme_support( 'title-tag' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support('post-thumbnails');
+		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__('Primary', 'heritage-concrete'),
+				'primary-menu'    => esc_html__( 'Primary Menu', 'heritage-concrete' ),
 			)
 		);
 
@@ -118,7 +121,7 @@ if (!function_exists('heritage_concrete_setup')) :
 		);
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support('customize-selective-refresh-widgets');
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add support for core custom logo.
@@ -128,15 +131,15 @@ if (!function_exists('heritage_concrete_setup')) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 130,
+				'width'       => 121,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
 		);
 	}
 endif;
-add_action('after_setup_theme', 'heritage_concrete_setup');
+add_action( 'after_setup_theme', 'heritage_concrete_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -145,24 +148,23 @@ add_action('after_setup_theme', 'heritage_concrete_setup');
  *
  * @global int $content_width
  */
-function heritage_concrete_content_width()
-{
-	$GLOBALS['content_width'] = apply_filters('heritage_concrete_content_width', 640);
+function heritage_concrete_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'heritage_concrete_content_width', 640 );
 }
-add_action('after_setup_theme', 'heritage_concrete_content_width', 0);
+
+add_action( 'after_setup_theme', 'heritage_concrete_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function heritage_concrete_widgets_init()
-{
+function heritage_concrete_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'heritage-concrete'),
+			'name'          => esc_html__( 'Sidebar', 'heritage-concrete' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'heritage-concrete'),
+			'description'   => esc_html__( 'Add widgets here.', 'heritage-concrete' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -170,64 +172,67 @@ function heritage_concrete_widgets_init()
 		)
 	);
 }
-add_action('widgets_init', 'heritage_concrete_widgets_init');
+
+add_action( 'widgets_init', 'heritage_concrete_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function heritage_concrete_scripts()
-{
-	wp_enqueue_style('heritage-concrete-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('heritage-concrete-style', 'rtl', 'replace');
+function heritage_concrete_scripts() {
+	wp_enqueue_style( 'heritage-concrete-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'heritage-concrete-style', 'rtl', 'replace' );
 
-	wp_enqueue_script('heritage-concrete-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	//wp_enqueue_script( 'heritage-concrete-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action('wp_enqueue_scripts', 'heritage_concrete_scripts');
+
+add_action( 'wp_enqueue_scripts', 'heritage_concrete_scripts' );
+
 
 /**
- * Implement the Custom Header feature.
+ * includes
  */
+require get_template_directory() . '/inc/aq_resizer.php';
 require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/enqueue-scripts.php';
+require get_template_directory() . '/inc/helper-functions.php';
+require get_template_directory() . '/inc/wp-reset.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-if (defined('JETPACK__VERSION')) {
+if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
 //Acf Option Pages
-if (function_exists('acf_add_options_page')) {
+if ( function_exists( 'acf_add_options_page' ) ) {
 
-	$option_page = acf_add_options_page(array(
+	$option_page = acf_add_options_page( array(
 		'page_title' => 'Heritage Concrete Settings',
 		'menu_title' => 'Heritage Settings',
 		'menu_slug'  => 'heritage-settings',
 		'capability' => 'edit_posts',
 		'redirect'   => false
-	));
-	acf_add_options_sub_page(array(
+	) );
+	acf_add_options_sub_page( array(
 		'page_title'  => 'Theme Footer Settings',
 		'menu_title'  => 'Footer Settings',
 		'parent_slug' => 'heritage-settings',
-	));
+	) );
 }
+
+
+// Method 1: Filter.
+function my_acf_google_map_api( $api ){
+	$api['key'] = 'AIzaSyBbRMDYBp0KissJu9jH8ke05B6424Kequw';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+

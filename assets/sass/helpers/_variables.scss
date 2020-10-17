@@ -1,17 +1,17 @@
-$color__background-body: #fff;
+$color__background-body: #262425;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #b4b655;
+$color__background-button: #000000;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #000;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
+$color__link: #e8d4a2;
 $color__link-visited: purple;
-$color__link-hover: #b4b655;
-$color__text-main: #000;
+$color__link-hover: darken(#e8d4a2,10%);
+$color__text-main: #343434;
 $color__sec: #b4b655;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -37,9 +37,7 @@ $columns__margin: 3.8%;
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
 
-$font__main: 'Roboto', sans-serif;
-$font-sec: 'Playfair Display', serif;
-$font_third: 'Mathilde';
+$font__main:'Barlow', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;

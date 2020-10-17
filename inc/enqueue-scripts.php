@@ -10,13 +10,14 @@
  * Enqueue scripts and styles.
  */
 function surety_system_scripts() {
-	wp_enqueue_style( 'surety-system-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'surety-system-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'heritage-concrete-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'heritage-concrete-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'surety-system-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'surety-system-vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), '20151215', true );
-	wp_enqueue_script( 'surety-system-custom', get_template_directory_uri() . '/assets/js/custom.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'heritage-concrete-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'heritage-concrete-vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'heritage-concrete-custom', get_template_directory_uri() . '/assets/js/custom.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'heritage-concrete-mapapi', '//maps.googleapis.com/maps/api/js?key=AIzaSyBbRMDYBp0KissJu9jH8ke05B6424Kequw', array(), '1.0', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -37,19 +38,18 @@ function ss_tinymce_style() {
 
 }
 
-add_action( 'admin_init', 'ss_tinymce_style' );
+//add_action( 'admin_init', 'ss_tinymce_style' );
 
 
 //Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'google_fonts' );
-
 function google_fonts() {
 	$query_args = array(
 		/*'family' => 'Work+Sans:wght@400;600;700;800'*/
-		'family' => 'Lato:400,700|Work+Sans:400,600,700,800&display=swap'
+		'family' => 'Barlow:wght@400;500;600;700&display=swap'
 	);
 	// A safe way to register a CSS style file for later use
-	wp_register_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_register_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css2" ), array(), null );
 
 	// A safe way to add/enqueue a CSS style file to a WordPress generated page
 	wp_enqueue_style( 'google-fonts' );
@@ -59,7 +59,7 @@ function google_fonts() {
 //enqueue ajax script and localize admin ajax
 function my_enqueue() {
 
-	wp_enqueue_script( 'ajax-script', get_template_directory_uri() . '/assets/js/ajax-scripts.js', array( 'jquery' ) );
+	//wp_enqueue_script( 'ajax-script', get_template_directory_uri() . '/assets/js/ajax-scripts.js', array( 'jquery' ) );
 
 	wp_localize_script( 'ajax-script', 'ss_ajax_object',
 		array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
@@ -73,4 +73,4 @@ function my_acf_admin_enqueue_scripts() {
 
 }
 
-add_action( 'acf/input/admin_enqueue_scripts', 'my_acf_admin_enqueue_scripts' );
+//add_action( 'acf/input/admin_enqueue_scripts', 'my_acf_admin_enqueue_scripts' );
