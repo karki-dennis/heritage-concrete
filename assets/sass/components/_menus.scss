@@ -1,13 +1,16 @@
 .main-navigation{
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  margin-left: auto;
   a{
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    padding: 0 22px;
+    padding: 0 20px;
+    @media (max-width: 1202px){
+      padding: 0 16px;
+    }
     &:hover{
       color: #e8d4a2;
     }
@@ -29,6 +32,9 @@
     color: #231f20;
     display: flex;
     align-items: center;
+    @media (max-width: 1202px){
+      padding: 20px 35px;
+    }
     svg{
       margin-right: 10px;
     }
@@ -40,5 +46,8 @@
 .menu-primary-menu-container {
   background: #262425;
   padding: 30px 20px;
+  @media (max-width: 1202px){
+    padding: 20px 0;
+  }
 }
 

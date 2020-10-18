@@ -87,7 +87,7 @@ if ( ! function_exists( 'heritage_concrete_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary-menu'    => esc_html__( 'Primary Menu', 'heritage-concrete' ),
+				'primary-menu' => esc_html__( 'Primary Menu', 'heritage-concrete' ),
 			)
 		);
 
@@ -229,10 +229,28 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 
 // Method 1: Filter.
-function my_acf_google_map_api( $api ){
+function my_acf_google_map_api( $api ) {
 	$api['key'] = 'AIzaSyBbRMDYBp0KissJu9jH8ke05B6424Kequw';
+
 	return $api;
 }
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+add_filter( 'acf/fields/google_map/api', 'my_acf_google_map_api' );
 
 
+function banner() {
+	?>
+    <div class="banner">
+		<?php if ( has_post_thumbnail() ): ?>
+            <img src="<?php echo get_featured_image_src(); ?>" alt="<?php the_title(); ?>">
+		<?php else: ?>
+            <img src="<?php echo site_url(); ?>/wp-content/uploads/2020/10/services.png" alt="<?php the_title(); ?>">
+
+		<?php endif; ?>
+
+        <div class="container">
+            <h1><?php the_title(); ?></h1>
+        </div>
+    </div>
+	<?php
+}

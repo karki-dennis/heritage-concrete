@@ -7,12 +7,7 @@
  * Template Name: About Us
  */
 get_header(); ?>
-<div class="banner">
-    <img src="<?php echo get_featured_image_src(); ?>" alt="<?php the_title(); ?>">
-    <div class="container">
-        <h1><?php the_title(); ?></h1>
-    </div>
-</div>
+<?php echo banner(); ?>
 <?php
 $introBlock = get_field( 'intro_block' );
 ?>

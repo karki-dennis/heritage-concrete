@@ -27,6 +27,9 @@
     line-height: 1;
     text-transform: uppercase;
     margin-bottom: 150px;
+    @media(max-width: 1200px) {
+      margin-bottom: 70px;
+    }
   }
 
   img {
@@ -40,11 +43,160 @@
 .intro-block {
   color: #fff;
   padding: 80px 0 40px;
+
   .section-heading {
     font-weight: 600;
     margin-bottom: 45px;
   }
 }
-.gallery-block{
+
+.gallery-block {
   padding-bottom: 80px;
+}
+
+
+.resources-block {
+  padding: 85px 0;
+
+  h4 {
+    color: #fff;
+    @include font-size(25);
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  li {
+    max-width: 585px;
+    margin: 0 15px 30px 15px;
+    width: calc(50% - 30px);
+
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      color: #000;
+      -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #ccc;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    color: #000;
+    @include font-size(25);
+    font-weight: 800;
+    background: #e2d0a2;
+    padding: 45px 50px;
+
+  }
+}
+
+.services-block {
+  .service__item {
+    background: #262425;
+    color: #fff;
+    padding: 80px 0;
+
+    h2 {
+      @include font-size(35);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(even) {
+      background: #e8d4a2;
+      color: #000;
+    }
+  }
+
+  .gallery-block {
+    padding: 0;
+    margin-top: 45px;
+  }
+}
+
+.link-block {
+  padding: 80px 0;
+
+  ul {
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 20px;
+
+    li {
+      width: 50%;
+      margin-bottom: 15px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 15px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.locations-block {
+  color: #fff;
+
+  .intro-block {
+    @include font-size(25);
+  }
+}
+
+.locations-map {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  justify-content: center;
+
+  .map-wrap {
+    max-width: 585px;
+    width: calc(50% - 30px);
+    margin: 15px;
+  }
+
+  .location-address {
+    background: #e2d0a2;
+    padding: 40px 60px;
+    color: #000;
+  }
+
+  h4 {
+    margin: 0 0 5px -22px;
+    line-height: 1;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.page {
+  .site-footer {
+    border-top: solid 1px #707070;
+  }
 }
